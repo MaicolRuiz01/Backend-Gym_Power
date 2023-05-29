@@ -7,7 +7,7 @@
     <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
     <script th:src="@{/js/bootstrap.js}"></script>
     <script th:src="@{/js/jquery-3.7.0.js}"></script>
-    <title>CRUD Cliente</title>
+    <title>Selecciones</title>
 </head>
 <body>
     <header th:fragment="barraNavegacion">
@@ -42,12 +42,33 @@
 
     </header>
     <main>
+		
+		<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>Continente</th>
+					<th>Grupo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="seleccion : ${selecciones}">
+					<td th:text="${seleccion.id}"></td>
+					<td th:text="${seleccion.nombre}"></td>
+					<td th:text="${seleccion.continente}"></td>
+					<td th:text="${seleccion.grupo}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
     </main>
     <footer th:fragment="footer" class="bg-dark text-white text-center fixed-bottom" >
 		
 		<div class="container ">
-			<p>Parrafo gay</p>
+			<p>Parrafo </p>
 		</div>
 
     </footer>
