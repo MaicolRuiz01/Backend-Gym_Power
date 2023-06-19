@@ -18,7 +18,7 @@ import com.app.crud.gym.entity.Usuario;
 import com.app.crud.gym.repository.UsuarioRepository;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 	@Autowired
 	UsuarioRepository usuarioRepository;
@@ -73,8 +73,8 @@ public class UsuarioController {
 				usuarioReturn.setApellido(usuario.getApellido());
 				usuarioReturn.setDocumento(usuario.getDocumento());
 				usuarioReturn.setGenero(usuario.getGenero());
-				usuarioReturn.setFechaNac(usuario.getFechaNac());
-				usuarioReturn.setEmail(usuario.getEmail());
+				usuarioReturn.setFecha_nac(usuario.getFecha_nac());
+				usuarioReturn.setCorreo(usuario.getCorreo());
 				usuarioReturn.setContraseña(usuario.getContraseña());
 				
 				return ResponseEntity.ok(usuarioRepository.save(usuarioReturn));
@@ -94,6 +94,8 @@ public class UsuarioController {
 			if(UsuarioCurrent.isPresent()) {
 				
 				usuarioRepository.deleteById(UsuarioCurrent.get().getId());
+				
+				return ResponseEntity.ok(true);
 			}
 			return ResponseEntity.status(HttpStatus.CONFLICT).build();
 		} catch (Exception e) {

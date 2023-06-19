@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="usuario")
+@Table(name="usuarios")
 public class Usuario {
 	
 	@Id
@@ -24,8 +24,8 @@ public class Usuario {
 	private String nombre;
 	private String apellido;
 	private String documento;
-	private Date fechaNac;
-	private String email;
+	private Date fecha_nac;
+	private String correo;
 	private String contraseña;
 	private String genero;
 

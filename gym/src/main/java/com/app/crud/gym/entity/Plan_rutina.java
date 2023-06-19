@@ -1,32 +1,25 @@
 package com.app.crud.gym.entity;
 
-import java.util.List;
-
-
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name="herramientas")
-public class Herramienta {
+@Table(name="plan_rutina")
+public class Plan_rutina {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String nombre;
-	private String descripcion;
-	
-	@OneToMany(mappedBy = "herramienta")
-	private List<Ejercicio> listaejercicios;
-	
+	@Column(name="id_plan")
+	private Integer id_plan;
+	@Column(name="id_rutina")
+	private Integer id_rutina;
 	
 
 }
