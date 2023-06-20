@@ -2,7 +2,7 @@ package com.app.crud.gym.entity;
 
 import java.util.List;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 
@@ -23,7 +23,7 @@ public class Herramienta {
 	private Integer id;
 	private String nombre;
 	private String descripcion;
-	
+	@JsonIgnore
 	@OneToMany(mappedBy = "herramienta")
 	private List<Ejercicio> listaejercicios;
 	
